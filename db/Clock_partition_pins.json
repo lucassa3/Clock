@@ -1,0 +1,109 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ula_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ula_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "in_b[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sel",
+					"strict" : false
+				},
+				{
+					"name" : "in_a[0]",
+					"strict" : false
+				},
+				{
+					"name" : "in_b[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in_a[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in_b[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in_a[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in_b[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in_a[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in_b[4]",
+					"strict" : false
+				},
+				{
+					"name" : "in_a[4]",
+					"strict" : false
+				},
+				{
+					"name" : "in_b[5]",
+					"strict" : false
+				},
+				{
+					"name" : "in_a[5]",
+					"strict" : false
+				},
+				{
+					"name" : "in_b[6]",
+					"strict" : false
+				},
+				{
+					"name" : "in_a[6]",
+					"strict" : false
+				},
+				{
+					"name" : "in_b[7]",
+					"strict" : false
+				},
+				{
+					"name" : "in_a[7]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
