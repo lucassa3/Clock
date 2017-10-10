@@ -1,0 +1,48 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity unidadeControle is
+	
+	port (
+		IN_R0, IN_R1, IN_R2, IN_R3, IN_R4, IN_R5 : in std_logic_vector(3 downto 0);
+		IN_DEMUX_SEL : in std_logic_vector(2 downto 0);
+		SEL_MUX_DMUX :	out std_logic_vector(2 downto 0);
+		SEL_ULA      :	out std_logic;
+		REG_ENABLE   : out std_logic_vector(5 downto 0);
+		REG_RESET    : out std_logic_vector(5 downto 0)
+	);
+	
+end entity;
+
+architecture rtl of unidadeControle is
+begin
+
+	SEL_MUX_DEMUX <= "001" when IN_REG = "1010" and IN_DEMUX_SEL = "000" else
+	                 "010" when IN_REG = "0110" and IN_DEMUX_SEL = "001" else
+						  "011" when IN_REG = "1010" and IN_DEMUX_SEL = "010" else
+						  "100" when IN_REG = "0110" and IN_DEMUX_SEL = "011" else
+						  "101" when IN_REG = "1010" and IN_DEMUX_SEL = "100" else
+						  "000";
+						  
+	SEL_ULA <= '0';
+	
+	REG_ENABLE <= "000001" when SEL_MUX_DEMUX = "000" else
+					  "000010" when SEL_MUX_DEMUX = "001" else
+					  "000100" when SEL_MUX_DEMUX = "010" else
+					  "001000" when SEL_MUX_DEMUX = "011" else
+					  "010000" when SEL_MUX_DEMUX = "100" else
+					  "100000" when SEL_MUX_DEMUX = "101" else
+					  "000000";
+					  
+	REG_RESET <= "000001" when IN_REG = "1010" and IN_DEMUX_SEL = "000" else
+					 "000010" when IN_REG = "0110" and IN_DEMUX_SEL = "001" else
+					 "000100" when IN_REG = "1010" and IN_DEMUX_SEL = "010" else
+					 "001000" when IN_REG = "0110" and IN_DEMUX_SEL = "011" else
+					 "010000" when IN_REG = "1010" and IN_DEMUX_SEL = "100" else
+					 "000000";
+					 
+	REG_RESET <= "111111" when IN_R0 = "1010" and IN_R1 = "0101" and IN_R2 = "1010" and IN_R3 = "0101" and IN_R4 = "0100" and IN_R5 = "0010";
+					
+
+end architecture;
+                    

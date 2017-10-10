@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Clock
-Sun Oct 08 16:53:15 2017
+Mon Oct 09 23:25:31 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,11 +13,29 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |ula
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R0
+ 12. Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R1
+ 13. Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R2
+ 14. Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R3
+ 15. Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R4
+ 16. Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R5
+ 17. Parameter Settings for User Entity Instance: fluxoDados:FD0|Mux6Way:MUX6WAY0
+ 18. Parameter Settings for User Entity Instance: fluxoDados:FD0|ula:ULA0
+ 19. Parameter Settings for User Entity Instance: fluxoDados:FD0|Demux6Way:DMUX6WAY0
+ 20. Port Connectivity Checks: "conversorHex7Seg:CONV5"
+ 21. Port Connectivity Checks: "conversorHex7Seg:CONV4"
+ 22. Port Connectivity Checks: "conversorHex7Seg:CONV3"
+ 23. Port Connectivity Checks: "conversorHex7Seg:CONV2"
+ 24. Port Connectivity Checks: "conversorHex7Seg:CONV1"
+ 25. Port Connectivity Checks: "conversorHex7Seg:CONV0"
+ 26. Port Connectivity Checks: "fluxoDados:FD0|ula:ULA0"
+ 27. Port Connectivity Checks: "clockDivisor:CD0"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +62,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct 08 16:53:15 2017       ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 09 23:25:31 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Clock                                       ;
-; Top-level Entity Name              ; ula                                         ;
+; Top-level Entity Name              ; TopLevel                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 17                                          ;
-;     Total combinational functions  ; 17                                          ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 25                                          ;
+; Total pins                         ; 43                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -67,7 +85,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; ula                ; Clock              ;
+; Top-level entity name                                                      ; TopLevel           ; Clock              ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -163,45 +181,52 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; ula.vhd                          ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/ula.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/conversorHex7Seg.vhd ;         ;
+; registrador.vhd                  ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/registrador.vhd      ;         ;
+; ula.vhd                          ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/ula.vhd              ;         ;
+; fluxoDados.vhd                   ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/fluxoDados.vhd       ;         ;
+; clockDivisor.vhd                 ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/clockDivisor.vhd     ;         ;
+; Mux6Way.vhd                      ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Mux6Way.vhd          ;         ;
+; Demux6Way.vhd                    ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd        ;         ;
+; unidadeControle.vhd              ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd  ;         ;
+; TopLevel.vhd                     ; yes             ; User VHDL File  ; C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd         ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 17        ;
-;                                             ;           ;
-; Total combinational functions               ; 17        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 7         ;
-;     -- <=2 input functions                  ; 10        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 9         ;
-;     -- arithmetic mode                      ; 8         ;
-;                                             ;           ;
-; Total registers                             ; 0         ;
-;     -- Dedicated logic registers            ; 0         ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 25        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; sel~input ;
-; Maximum fan-out                             ; 9         ;
-; Total fan-out                               ; 74        ;
-; Average fan-out                             ; 1.10      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+;                                             ;          ;
+; Total combinational functions               ; 0        ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 0        ;
+;     -- 3 input functions                    ; 0        ;
+;     -- <=2 input functions                  ; 0        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 0        ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 43       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 1        ;
+; Total fan-out                               ; 43       ;
+; Average fan-out                             ; 0.50     ;
++---------------------------------------------+----------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -209,9 +234,45 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |ula                       ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 25   ; 0            ; |ula                ; ula         ; work         ;
+; |TopLevel                  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 43   ; 0            ; |TopLevel           ; TopLevel    ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; clockDivisor:CD0|clk_1Hz               ; Stuck at GND due to stuck port data_in ;
+; fluxoDados:FD0|registrador:R5|q[0..3]  ; Stuck at GND due to stuck port clock   ;
+; fluxoDados:FD0|registrador:R4|q[0..3]  ; Stuck at GND due to stuck port clock   ;
+; fluxoDados:FD0|registrador:R3|q[0..3]  ; Stuck at GND due to stuck port clock   ;
+; fluxoDados:FD0|registrador:R2|q[0..3]  ; Stuck at GND due to stuck port clock   ;
+; fluxoDados:FD0|registrador:R1|q[0..3]  ; Stuck at GND due to stuck port clock   ;
+; fluxoDados:FD0|registrador:R0|q[0..3]  ; Stuck at GND due to stuck port clock   ;
+; Total Number of Removed Registers = 25 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                    ;
++--------------------------+---------------------------+-------------------------------------------------------------------------+
+; Register name            ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++--------------------------+---------------------------+-------------------------------------------------------------------------+
+; clockDivisor:CD0|clk_1Hz ; Stuck at GND              ; fluxoDados:FD0|registrador:R5|q[3], fluxoDados:FD0|registrador:R5|q[2], ;
+;                          ; due to stuck port data_in ; fluxoDados:FD0|registrador:R5|q[1], fluxoDados:FD0|registrador:R5|q[0], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R4|q[3], fluxoDados:FD0|registrador:R4|q[2], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R4|q[1], fluxoDados:FD0|registrador:R4|q[0], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R3|q[3], fluxoDados:FD0|registrador:R3|q[2], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R3|q[1], fluxoDados:FD0|registrador:R3|q[0], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R2|q[3], fluxoDados:FD0|registrador:R2|q[2], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R2|q[1], fluxoDados:FD0|registrador:R2|q[0], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R1|q[3], fluxoDados:FD0|registrador:R1|q[2], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R1|q[1], fluxoDados:FD0|registrador:R1|q[0], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R0|q[3], fluxoDados:FD0|registrador:R0|q[2], ;
+;                          ;                           ; fluxoDados:FD0|registrador:R0|q[1], fluxoDados:FD0|registrador:R0|q[0]  ;
++--------------------------+---------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -229,14 +290,183 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |ula ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; bits           ; 8     ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R0 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; bits           ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R1 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; bits           ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R2 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; bits           ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R3 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; bits           ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R4 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; bits           ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|registrador:R5 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; bits           ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|Mux6Way:MUX6WAY0 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; bits           ; 4     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|ula:ULA0 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; bits           ; 4     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fluxoDados:FD0|Demux6Way:DMUX6WAY0 ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; bits           ; 4     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:CONV5" ;
++----------+-------+----------+----------------------+
+; Port     ; Type  ; Severity ; Details              ;
++----------+-------+----------+----------------------+
+; apaga    ; Input ; Info     ; Stuck at GND         ;
+; negativo ; Input ; Info     ; Stuck at GND         ;
+; overflow ; Input ; Info     ; Stuck at GND         ;
++----------+-------+----------+----------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:CONV4" ;
++----------+-------+----------+----------------------+
+; Port     ; Type  ; Severity ; Details              ;
++----------+-------+----------+----------------------+
+; apaga    ; Input ; Info     ; Stuck at GND         ;
+; negativo ; Input ; Info     ; Stuck at GND         ;
+; overflow ; Input ; Info     ; Stuck at GND         ;
++----------+-------+----------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:CONV3"                                                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; apaga     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; negativo  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; overflow  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; saida7seg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:CONV2"                                                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; apaga     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; negativo  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; overflow  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; saida7seg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:CONV1"                                                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; apaga     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; negativo  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; overflow  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; saida7seg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:CONV0"                                                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; apaga     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; negativo  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; overflow  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; saida7seg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "fluxoDados:FD0|ula:ULA0" ;
++------------+-------+----------+---------------------+
+; Port       ; Type  ; Severity ; Details             ;
++------------+-------+----------+---------------------+
+; in_a[3..1] ; Input ; Info     ; Stuck at GND        ;
+; in_a[0]    ; Input ; Info     ; Stuck at VCC        ;
++------------+-------+----------+---------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "clockDivisor:CD0" ;
++-------+-------+----------+-------------------+
+; Port  ; Type  ; Severity ; Details           ;
++-------+-------+----------+-------------------+
+; reset ; Input ; Info     ; Stuck at GND      ;
++-------+-------+----------+-------------------+
 
 
 +-----------------------------------------------------+
@@ -244,16 +474,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 25                          ;
-; cycloneiii_lcell_comb ; 17                          ;
-;     arith             ; 8                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 7                           ;
-;     normal            ; 9                           ;
-;         2 data inputs ; 9                           ;
+; boundary_port         ; 43                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.70                        ;
-; Average LUT depth     ; 2.21                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -262,7 +489,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -272,7 +499,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sun Oct 08 16:52:56 2017
+    Info: Processing started: Mon Oct 09 23:25:14 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Clock -c Clock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -285,18 +512,136 @@ Info (12021): Found 2 design units, including 1 entities, in source file registr
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
     Info (12022): Found design unit 1: ula-rtl File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/ula.vhd Line: 23
     Info (12023): Found entity 1: ula File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/ula.vhd Line: 6
-Info (12127): Elaborating entity "ula" for the top level hierarchy
-Info (286030): Timing-Driven Synthesis is running
+Info (12021): Found 2 design units, including 1 entities, in source file fluxodados.vhd
+    Info (12022): Found design unit 1: fluxoDados-rtl File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/fluxoDados.vhd Line: 18
+    Info (12023): Found entity 1: fluxoDados File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/fluxoDados.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file clockdivisor.vhd
+    Info (12022): Found design unit 1: clockDivisor-rtl File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/clockDivisor.vhd Line: 17
+    Info (12023): Found entity 1: clockDivisor File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/clockDivisor.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mux6way.vhd
+    Info (12022): Found design unit 1: Mux6Way-rtl File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Mux6Way.vhd Line: 19
+    Info (12023): Found entity 1: Mux6Way File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Mux6Way.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file demux6way.vhd
+    Info (12022): Found design unit 1: Demux6Way-rtl File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 25
+    Info (12023): Found entity 1: Demux6Way File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux2way.vhd
+    Info (12022): Found design unit 1: Mux2Way-rtl File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Mux2Way.vhd Line: 19
+    Info (12023): Found entity 1: Mux2Way File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Mux2Way.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file unidadecontrole.vhd
+    Info (12022): Found design unit 1: unidadeControle-rtl File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 17
+    Info (12023): Found entity 1: unidadeControle File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file toplevel.vhd
+    Info (12022): Found design unit 1: TopLevel-rtl2 File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 18
+    Info (12023): Found entity 1: TopLevel File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 5
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at TopLevel.vhd(68): used explicit default value for signal "SIG_RESET_CLK" because signal was never assigned a value File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 68
+Warning (10540): VHDL Signal Declaration warning at TopLevel.vhd(68): used explicit default value for signal "SIG_APAGA" because signal was never assigned a value File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 68
+Warning (10540): VHDL Signal Declaration warning at TopLevel.vhd(68): used explicit default value for signal "SIG_NEG" because signal was never assigned a value File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 68
+Warning (10540): VHDL Signal Declaration warning at TopLevel.vhd(68): used explicit default value for signal "SIG_OF" because signal was never assigned a value File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 68
+Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(74): object "HEX0_OUT" assigned a value but never read File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 74
+Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(74): object "HEX1_OUT" assigned a value but never read File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 74
+Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(74): object "HEX2_OUT" assigned a value but never read File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 74
+Warning (10036): Verilog HDL or VHDL warning at TopLevel.vhd(74): object "HEX3_OUT" assigned a value but never read File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 74
+Info (12128): Elaborating entity "clockDivisor" for hierarchy "clockDivisor:CD0" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 79
+Info (12128): Elaborating entity "fluxoDados" for hierarchy "fluxoDados:FD0" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 80
+Warning (10540): VHDL Signal Declaration warning at fluxoDados.vhd(74): used explicit default value for signal "ONE" because signal was never assigned a value File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/fluxoDados.vhd Line: 74
+Info (12128): Elaborating entity "registrador" for hierarchy "fluxoDados:FD0|registrador:R0" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/fluxoDados.vhd Line: 78
+Info (12128): Elaborating entity "Mux6Way" for hierarchy "fluxoDados:FD0|Mux6Way:MUX6WAY0" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/fluxoDados.vhd Line: 84
+Info (12128): Elaborating entity "ula" for hierarchy "fluxoDados:FD0|ula:ULA0" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/fluxoDados.vhd Line: 85
+Info (12128): Elaborating entity "Demux6Way" for hierarchy "fluxoDados:FD0|Demux6Way:DMUX6WAY0" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/fluxoDados.vhd Line: 86
+Warning (10631): VHDL Process Statement warning at Demux6Way.vhd(28): inferring latch(es) for signal or variable "a", which holds its previous value in one or more paths through the process File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at Demux6Way.vhd(28): inferring latch(es) for signal or variable "b", which holds its previous value in one or more paths through the process File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at Demux6Way.vhd(28): inferring latch(es) for signal or variable "c", which holds its previous value in one or more paths through the process File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at Demux6Way.vhd(28): inferring latch(es) for signal or variable "d", which holds its previous value in one or more paths through the process File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at Demux6Way.vhd(28): inferring latch(es) for signal or variable "e", which holds its previous value in one or more paths through the process File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Warning (10631): VHDL Process Statement warning at Demux6Way.vhd(28): inferring latch(es) for signal or variable "f", which holds its previous value in one or more paths through the process File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "f[0]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "f[1]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "f[2]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "f[3]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "e[0]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "e[1]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "e[2]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "e[3]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "d[0]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "d[1]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "d[2]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "d[3]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "c[0]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "c[1]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "c[2]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "c[3]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "b[0]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "b[1]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "b[2]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "b[3]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "a[0]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "a[1]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "a[2]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (10041): Inferred latch for "a[3]" at Demux6Way.vhd(28) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/Demux6Way.vhd Line: 28
+Info (12128): Elaborating entity "unidadeControle" for hierarchy "unidadeControle:UC0" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at unidadeControle.vhd(20): inferring latch(es) for signal or variable "REG_ENABLE", which holds its previous value in one or more paths through the process File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 20
+Info (10041): Inferred latch for "REG_ENABLE[0]" at unidadeControle.vhd(20) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 20
+Info (10041): Inferred latch for "REG_ENABLE[1]" at unidadeControle.vhd(20) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 20
+Info (10041): Inferred latch for "REG_ENABLE[2]" at unidadeControle.vhd(20) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 20
+Info (10041): Inferred latch for "REG_ENABLE[3]" at unidadeControle.vhd(20) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 20
+Info (10041): Inferred latch for "REG_ENABLE[4]" at unidadeControle.vhd(20) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 20
+Info (10041): Inferred latch for "REG_ENABLE[5]" at unidadeControle.vhd(20) File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/unidadeControle.vhd Line: 20
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:CONV0" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 82
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 9
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 42 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 17 input pins
-    Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 17 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 684 megabytes
-    Info: Processing ended: Sun Oct 08 16:53:15 2017
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:38
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/lucas/OneDrive/Insper/DesignComp/Clock/TopLevel.vhd Line: 7
+Info (21057): Implemented 43 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 42 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 62 warnings
+    Info: Peak virtual memory: 679 megabytes
+    Info: Processing ended: Mon Oct 09 23:25:31 2017
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:36
 
 

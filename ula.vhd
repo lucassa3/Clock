@@ -6,7 +6,7 @@ use ieee.numeric_std.all; -- use that, it's a better coding guideline
 entity ula is
 generic(
 
-	bits	:	integer := 8
+	bits	:	integer := 4
 	
 	);
 	
